@@ -38,6 +38,10 @@ export const ThemeProvider: React.FC<ThemeContextProps> = ({ children }) => {
     }
   }, [localStorage, setTheme]);
 
+  useEffect(() => {
+    localStorage.setItem("globalTheme", theme);
+  }, [localStorage, theme]);
+
   const themeHandler = () => {
     const themeSetter = theme === "light" ? "dark" : "light";
 
