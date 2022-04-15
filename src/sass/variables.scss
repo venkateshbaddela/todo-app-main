@@ -1,0 +1,57 @@
+/* Font-Family */
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
+
+/* Primary colors */
+$bright-blue: hsl(220, 98%, 61%);
+$sky-blue: hsl(192, 100%, 67%);
+$medium-orchid: hsl(280, 85%, 65%);
+
+/* Neutral colors */
+////Light-theme-colors
+$light-000: hsl(0, 0%, 100%);
+$light-001: hsl(0, 0%, 98%);
+$light-002: hsl(236, 33%, 92%);
+$light-003: hsl(233, 11%, 84%);
+$light-004: hsl(236, 9%, 61%);
+$light-005: hsl(235, 19%, 35%);
+
+////Dark-theme-colors
+$dark-000: hsl(0, 0%, 0%);
+$dark-001: hsl(235, 21%, 11%);
+$dark-002: hsl(235, 24%, 19%);
+$dark-003: hsl(234, 39%, 85%);
+$dark-004: hsl(236, 33%, 92%);
+$dark-005: hsl(234, 11%, 52%);
+$dark-006: hsl(233, 14%, 35%);
+$dark-007: hsl(237, 14%, 26%);
+
+/*Radial Gradient */
+$radial-gradient: radial-gradient(
+  circle at top left,
+  $sky-blue,
+  $medium-orchid
+);
+
+$themes: (
+  light: (
+    main-backgroundClr: $light-002,
+    app-backgroundClr: $light-000,
+    activeText-clr: $light-005,
+    deactiveText-clr: $light-003,
+    border-Clr: $light-002,
+    large-img: url("../assets/images/bg-desktop-light.jpg"),
+    small-img: url("../assets/images/bg-mobile-light.jpg"),
+  ),
+  dark: (
+    main-backgroundClr: $dark-001,
+    app-backgroundClr: $dark-002,
+    activeText-clr: $dark-003,
+    deactiveText-clr: $dark-005,
+    border-Clr: $dark-007,
+    large-img: url("../assets/images/bg-desktop-dark.jpg"),
+    small-img: url("../assets/images/bg-mobile-dark.jpg"),
+  ),
+);
+
+/* Fonts */
+$font-family: "Josefin Sans", sans-serif;

@@ -1,0 +1,69 @@
+// @use "../variables.scss" as *;
+@use "../sass/index.scss" as *;
+
+.access {
+  padding: 2.5rem 2rem;
+  height: 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &-items {
+    font-size: 1.4rem;
+    cursor: pointer;
+    @include animate;
+    @include themify {
+      color: themed(deactiveText-clr);
+    }
+    &:hover {
+      @include themify {
+        color: themed(activeText-clr);
+      }
+    }
+  }
+
+  &-btnbox {
+    width: 40%;
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  @media only screen and (max-width: 450px) {
+    &-btnbox {
+      width: calc(100% - 7rem);
+      margin-top: 2.5rem;
+      padding: 1.8rem 2rem;
+      border-radius: 5px;
+      position: absolute;
+      top: 80%;
+      left: 50%;
+      transform: translateX(-50%);
+      @include animate;
+      @include themify {
+        background-color: themed(app-backgroundClr);
+      }
+    }
+  }
+
+  &-btn {
+    font-size: 1.3rem;
+    font-family: inherit;
+    background: none;
+    border: none;
+    cursor: pointer;
+    @include animate;
+    @include themify {
+      color: themed(deactiveText-clr);
+    }
+
+    &:hover {
+      @include themify {
+        color: themed(activeText-clr);
+      }
+    }
+  }
+}
+
+.activeBtn {
+  color: $bright-blue !important;
+}

@@ -1,0 +1,30 @@
+@use "../sass/index" as *;
+
+.todobox {
+  @include animate;
+  @include themify {
+    background-color: themed(app-backgroundClr);
+  }
+  box-shadow: 0px 5px 2rem rgba($dark-000, 0.2);
+  margin-top: 3rem;
+  border-radius: 5px;
+  overflow: hidden;
+
+  &-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+
+    &__item {
+      @include themify {
+        border-bottom: 1px solid themed(border-Clr);
+      }
+    }
+  }
+
+  &-check {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+  }
+}
