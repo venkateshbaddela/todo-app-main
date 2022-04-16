@@ -16,7 +16,7 @@ const ThemeContext = React.createContext<ThemeModeContext | undefined>(
 );
 
 export const ThemeProvider: React.FC<ThemeContextProps> = ({ children }) => {
-  const [theme, setTheme] = useState<string>("");
+  const [theme, setTheme] = useState<string>("light");
 
   const [toggleBtn, setToggleBtn] = useState<boolean>(false);
 
