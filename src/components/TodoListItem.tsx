@@ -36,42 +36,34 @@ const TodoListItem: React.FC<TodoListItemProps> = ({ item, index }) => {
   return (
     <Draggable draggableId={item.id} key={item.id} index={index}>
       {(provided, snapshot) => (
-        <div
+        <li
+          className={`todobox-item ${snapshot.isDragging ? "dragactive" : ""} `}
           {...provided.draggableProps}
           {...provided.dragHandleProps}
           ref={provided.innerRef}
         >
-          <li
-            className={`todobox-item ${
-              snapshot.isDragging ? "dragactive" : ""
-            } `}
-            // {...provided.draggableProps}
-            // {...provided.dragHandleProps}
-            // ref={provided.innerRef}
-          >
-            <Card className="todobox-check">
-              <input
-                type="checkbox"
-                id={`checkbox--${item.id}`}
-                className="todobox-item__input"
-                onClick={() => clearTodo(item)}
-                defaultChecked={item.completed}
-              />
+          <Card className="todobox-check">
+            <input
+              type="checkbox"
+              id={`checkbox--${item.id}`}
+              className="todobox-item__input"
+              onClick={() => clearTodo(item)}
+              defaultChecked={item.completed}
+            />
 
-              <label
-                className="todobox-item__checkbox"
-                htmlFor={`checkbox--${item.id}`}
-              ></label>
-              <p className="todobox-item__txt">{item.content}</p>
-            </Card>
-            <Button
-              className="todobox-item__btn"
-              onClick={() => deleteTodoHandler(item)}
-            >
-              <img src={cross} alt="close icon" />
-            </Button>
-          </li>
-        </div>
+            <label
+              className="todobox-item__checkbox"
+              htmlFor={`checkbox--${item.id}`}
+            ></label>
+            <p className="todobox-item__txt">{item.content}</p>
+          </Card>
+          <Button
+            className="todobox-item__btn"
+            onClick={() => deleteTodoHandler(item)}
+          >
+            <img src={cross} alt="close icon" />
+          </Button>
+        </li>
       )}
     </Draggable>
   );
